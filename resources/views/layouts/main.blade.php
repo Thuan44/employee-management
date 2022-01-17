@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Employee Manager</title>
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -88,7 +88,7 @@
                 <div id="collapseUser" class="collapse" aria-labelledby="headingTwo"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">User</a>
+                        <a class="collapse-item" href="{{ route('users.index') }}">User</a>
                         <a class="collapse-item" href="#">Role</a>
                         <a class="collapse-item" href="#">Permission</a>
                     </div>
@@ -139,7 +139,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-lg-inline text-gray-600 small">{{ Auth::user()->username }}</span>
-                                <img class="img-profile rounded-circle" src="assets/img/undraw_login.svg">
+                                <img class="img-profile rounded-circle" src="./assets/img/undraw_login.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -164,15 +164,8 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                    </div>
-
                     <!-- Page Main Content -->
-                    <div class="row">
-                        @yield('content')
-                    </div>
+                    @yield('content')
 
 
                 </div>
