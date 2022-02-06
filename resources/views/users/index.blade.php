@@ -18,7 +18,24 @@
                 </div>
             @endif
             <div class="card-header">
-                <a href="{{ route('users.create') }}" class="float-right">Create user</a>
+                <div class="row">
+                    <div class="col">
+                        <form method="GET" action="{{ route('users.index') }}">
+                            <div class="form-row align-items-center">
+                                <div class="col">
+                                    <input type="search" name="search" class="form-control mb-2" id="inlineFormInput"
+                                        placeholder="Search a user">
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary mb-2">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <a href="{{ route('users.create') }}" class="btn btn-primary mb-2">Create</a>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <table class="table">
@@ -37,8 +54,13 @@
                                 <td class="align-middle">{{ $user->username }}</td>
                                 <td class="align-middle">{{ $user->email }}</td>
                                 <td class="d-flex justify-content-around align-items-center">
-                                    <button class="btn text-info"><i class="far fa-edit"></i></button>
-                                    <button class="btn text-danger"><i class="far fa-trash-alt"></i></button>
+                                    <a href="{{ route('users.edit', $user) }}" class="btn text-info"><i
+                                            class="far fa-edit"></i></a>
+                                    <form method="POST" action="{{ route('users.destroy', $user) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn bg-none"><i class="far fa-trash-alt text-danger"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

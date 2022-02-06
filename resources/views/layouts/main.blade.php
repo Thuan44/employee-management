@@ -88,7 +88,7 @@
                 <div id="collapseUser" class="collapse" aria-labelledby="headingTwo"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('users.index') }}">User</a>
+                        <a class="collapse-item" href="{{ route('users.index') }}">Users</a>
                         <a class="collapse-item" href="#">Role</a>
                         <a class="collapse-item" href="#">Permission</a>
                     </div>
